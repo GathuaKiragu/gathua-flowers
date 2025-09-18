@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Map | Gathua Flowers & Gardening Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reusing your existing styles for consistency */
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #4caf50;
+            --primary-dark: #1b5e20;
+            --secondary: #7cb342;
+            --accent: #ffa000;
+            --light: #f1f8e9;
+            --dark: #212121;
+            --text: #333333;
+            --text-light: #757575;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            padding-top: 80px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            letter-spacing: 1.5px;
+            margin-top: -5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Sitemap specific styles */
+        .sitemap-container {
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .sitemap-list {
+            list-style: none;
+        }
+
+        .sitemap-list > li {
+            margin-bottom: 30px;
+        }
+
+        .sitemap-list h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .sitemap-sublist {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .sitemap-sublist li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .sitemap-sublist li:before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .sitemap-sublist a {
+            text-decoration: none;
+            color: var(--text);
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+
+        .sitemap-sublist a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .sitemap-sublist i {
+            color: var(--primary);
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .breadcrumb {
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            color: var(--white);
+        }
+
+        .footer-col p {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .sitemap-container {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div>
+                    <h1>Gathua <span>Flowers & Gardening</span></h1>
+                    <div class="logo-subtitle">SINCE 1990</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#plants">Indoor/Outdoor</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#clients">Clients</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sitemap Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Website Sitemap</h2>
+                <p>Navigate our website easily with our comprehensive sitemap</p>
+            </div>
+            
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> > <span>Sitemap</span>
+            </div>
+            
+            <div class="sitemap-container">
+                <ul class="sitemap-list">
+                    <li>
+                        <h3>Main Pages</h3>
+                        <ul class="sitemap-sublist">
+                            <li><a href="index.html#home"><i class="fas fa-home"></i> Home</a></li>
+                            <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                            <li><a href="sitemap.html"><i class="fas fa-sitemap"></i> Sitemap</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h3>Services</h3>
+                        <ul class="sitemap-sublist">
+                            <li><a href="index.html#services"><i class="fas fa-seedling"></i> All Services Overview</a></li>
+                            <li><a href="services/potted-plants.html"><i class="fas fa-leaf"></i> Potted Plants Supply</a></li>
+                            <li><a href="services/landscaping.html"><i class="fas fa-tree"></i> Landscaping Services</a></li>
+                            <li><a href="services/garden-maintenance.html"><i class="fas fa-leaf"></i> Garden Maintenance</a></li>
+                            <li><a href="services/lawn-care.html"><i class="fas fa-cloud-sun"></i> Lawn Care</a></li>
+                            <li><a href="services/trimming-pruning.html"><i class="fas fa-cut"></i> Trimming & Pruning</a></li>
+                            <li><a href="services/mulching-weeding.html"><i class="fas fa-layer-group"></i> Mulching & Weeding</a></li>
+                            <li><a href="services/consultation.html"><i class="fas fa-clipboard-list"></i> Consultation Services</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h3>Plant Types</h3>
+                        <ul class="sitemap-sublist">
+                            <li><a href="index.html#plants"><i class="fas fa-spa"></i> Plants Overview</a></li>
+                            <li><a href="plants/indoor-plants.html"><i class="fas fa-house-user"></i> Indoor Plants</a></li>
+                            <li><a href="plants/outdoor-plants.html"><i class="fas fa-tree"></i> Outdoor Plants</a></li>
+                            <li><a href="plants/flowering-plants.html"><i class="fas fa-certificate"></i> Flowering Plants</a></li>
+                            <li><a href="plants/air-purifying.html"><i class="fas fa-wind"></i> Air Purifying Plants</a></li>
+                            <li><a href="plants/low-maintenance.html"><i class="fas fa-tint-slash"></i> Low Maintenance Plants</a></li>
+                            <li><a href="plants/native-species.html"><i class="fas fa-globe-africa"></i> Native Kenyan Species</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h3>Projects & Portfolio</h3>
+                        <ul class="sitemap-sublist">
+                            <li><a href="portfolio.html"><i class="fas fa-images"></i> Our Portfolio</a></li>
+                            <li><a href="projects/residential.html"><i class="fas fa-home"></i> Residential Projects</a></li>
+                            <li><a href="projects/commercial.html"><i class="fas fa-building"></i> Commercial Projects</a></li>
+                            <li><a href="projects/institutional.html"><i class="fas fa-school"></i> Institutional Projects</a></li>
+                            <li><a href="projects/before-after.html"><i class="fas fa-exchange-alt"></i> Before & After Gallery</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h3>Client Resources</h3>
+                        <ul class="sitemap-sublist">
+                            <li><a href="clients.html"><i class="fas fa-users"></i> Our Clients</a></li>
+                            <li><a href="testimonials.html"><i class="fas fa-star"></i> Testimonials</a></li>
+                            <li><a href="care-guides.html"><i class="fas fa-book-open"></i> Plant Care Guides</a></li>
+                            <li><a href="seasonal-tips.html"><i class="fas fa-calendar-alt"></i> Seasonal Gardening Tips</a></li>
+                            <li><a href="faq.html"><i class="fas fa-question-circle"></i> Frequently Asked Questions</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h3>Company Information</h3>
+                        <ul class="sitemap-sublist">
+                            <li><a href="about.html"><i class="fas fa-history"></i> Our Story</a></li>
+                            <li><a href="team.html"><i class="fas fa-users"></i> Our Team</a></li>
+                            <li><a href="careers.html"><i class="fas fa-briefcase"></i> Careers</a></li>
+                            <li><a href="sustainability.html"><i class="fas fa-recycle"></i> Sustainability Practices</a></li>
+                            <li><a href="press.html"><i class="fas fa-newspaper"></i> Press & Media</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h3>E-Commerce</h3>
+                        <ul class="sitemap-sublist">
+                            <li><a href="shop.html"><i class="fas fa-shopping-cart"></i> Plant Shop</a></li>
+                            <li><a href="shop/indoor-plants.html"><i class="fas fa-house-user"></i> Indoor Plants Shop</a></li>
+                            <li><a href="shop/outdoor-plants.html"><i class="fas fa-tree"></i> Outdoor Plants Shop</a></li>
+                            <li><a href="shop/planters.html"><i class="fas fa-mortar-pestle"></i> Planters & Pots</a></li>
+                            <li><a href="shop/gardening-tools.html"><i class="fas fa-tools"></i> Gardening Tools</a></li>
+                            <li><a href="shop/soil-fertilizers.html"><i class="fas fa-vial"></i> Soil & Fertilizers</a></li>
+                            <li><a href="shop/gift-cards.html"><i class="fas fa-gift"></i> Gift Cards</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h3>Policy Pages</h3>
+                        <ul class="sitemap-sublist">
+                            <li><a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                            <li><a href="terms-conditions.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+                            <li><a href="return-policy.html"><i class="fas fa-undo"></i> Return Policy</a></li>
+                            <li><a href="shipping-policy.html"><i class="fas fa-truck"></i> Shipping Policy</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Gathua Flowers & Gardening</h3>
+                    <p>Transforming spaces with nature's beauty through professional gardening and landscaping services since 1990.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#plants">Indoor/Outdoor</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#clients">Clients</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services/potted-plants.html">Potted Plants Supply</a></li>
+                        <li><a href="services/landscaping.html">Landscaping</a></li>
+                        <li><a href="services/garden-maintenance.html">Garden Maintenance</a></li>
+                        <li><a href="services/lawn-care.html">Lawn Care</a></li>
+                        <li><a href="services/trimming-pruning.html">Trimming & Pruning</a></li>
+                        <li><a href="services/mulching-weeding.html">Mulching & Weeding</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                    <p><i class="fas fa-phone"></i> +254 701 250 543</p>
+                    <p><i class="fas fa-envelope"></i> info@gathuaflowers.co.ke</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Gathua Flowers and Gardening Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://gathuaflowers.co.ke/sitemap.xml
